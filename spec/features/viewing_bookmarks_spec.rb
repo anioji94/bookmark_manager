@@ -7,3 +7,13 @@ feature 'opening the webpage' do
     expect(page).to have_content("Your Bookmarks")
   end
 end
+
+describe '.all' do
+  it 'returns a list of bookmarks' do
+    bookmarks = Bookmark.all
+
+    expect(bookmarks).to include "http://makersacademy.com"
+    expect(bookmarks).to include "http://www.destroyallsoftware.com"
+    expect(bookmarks).to include "http://www.google.com"
+  end
+end
